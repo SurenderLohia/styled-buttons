@@ -1,7 +1,7 @@
 {
-  "name": "parcel-reactjs",
+  "name": "styled-button",
   "version": "1.0.0",
-  "description": "A minimal React.js boilerplate with parcel as bundler",
+  "description": "Styled button",
   "main": "index.js",
   "scripts": {
     "start": "parcel ./src/index.html --open"
@@ -10,7 +10,7 @@
     "parcel",
     "react"
   ],
-  "author": "“Robin <“wrobin@gmx.net”> (https://www.robinwieruch.de)",
+  "author": "“Surender Lohia",
   "license": "MIT",
   "dependencies": {
     "react": "^16.8.6",
