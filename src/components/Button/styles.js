@@ -1,18 +1,18 @@
-import styled, { css } from 'styled-components';
-import { lighten } from 'polished';
+import styled, { css } from "styled-components";
+import { lighten } from "polished";
 
-import { buttonSizes, buttonColors } from './constants';
+import { buttonSizes, buttonColors } from "./constants";
 
 const getButtonColor = (color) => {
-  return buttonColors[color] ? buttonColors[color] : buttonColors['primary'];
+  return buttonColors[color] ? buttonColors[color] : buttonColors["primary"];
 };
 
 export const StyledButton = styled.button`
   border: none;
   background-color: transparent;
 
-  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica,
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
 
   cursor: pointer;
@@ -39,27 +39,40 @@ export const StyledButton = styled.button`
 
   transition: 220ms all ease-in-out;
 
-  // color
-  ${({ color }) => {
+  /* disabled */
+  ${({ isDisabled }) =>
+    isDisabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `}
+
+  /* === Variants === */
+
+  /* Color */
+  ${({ color, isDisabled }) => {
     const buttonColor = getButtonColor(color);
     return css`
       background-color: ${buttonColor.background};
       color: ${buttonColor.text};
 
-      &:hover,
-      &:active {
-        background-color: ${lighten(-0.2, buttonColor.background)};
-      }
+      ${!isDisabled &&
+      css`
+        &:hover,
+        &:active {
+          background-color: ${lighten(-0.2, buttonColor.background)};
+        }
 
-      &:focus {
-        outline-style: solid;
-        outline-color: transparent;
-        box-shadow: 0 0 0 4px ${lighten(-0.4, buttonColor.background)};
-      }
+        &:focus {
+          outline-style: solid;
+          outline-color: transparent;
+          box-shadow: 0 0 0 4px ${lighten(-0.4, buttonColor.background)};
+        }
+      `}
     `;
   }}
 
-  // full width
+  // Full width
   ${(props) =>
     props.isFullWidth &&
     css`
@@ -70,7 +83,7 @@ export const StyledButton = styled.button`
   font-size: ${({ size }) =>
     buttonSizes[size]
       ? `${buttonSizes[size]}rem`
-      : `${buttonSizes['medium']}rem`}
+      : `${buttonSizes["medium"]}rem`}
 `;
 
 /**

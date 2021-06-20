@@ -38,6 +38,12 @@ Danger.args = {
   color: 'danger'
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled',
+  isDisabled: true
+};
+
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   children: 'Full Width',
