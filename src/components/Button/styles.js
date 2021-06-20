@@ -3,9 +3,14 @@ import { lighten } from 'polished';
 
 const btnColor = '#3e68ff';
 
-export const StyledButton = styled.button`
-  font-size: 1rem;
+const buttonSizes = {
+  small: 0.8,
+  medium: 1,
+  large: 1.5,
+  extraLarge: 2,
+};
 
+export const StyledButton = styled.button`
   border: none;
   background-color: transparent;
 
@@ -52,11 +57,19 @@ export const StyledButton = styled.button`
   }
 
   // Variations
+
+  // full width
   ${(props) =>
     props.isFullWidth &&
     css`
       width: 100%;
     `}
+
+  // Size
+  font-size: ${({ size }) =>
+    buttonSizes[size]
+      ? `${buttonSizes[size]}rem`
+      : `${buttonSizes['medium']}rem`}
 `;
 
 /**
