@@ -3,16 +3,25 @@ import PropTypes from "prop-types";
 
 import { StyledButton } from "./styles";
 function Button(props) {
-  const { children, type, onClick, isFullWidth, size, color, isDisabled } =
-    props;
+  const {
+    className,
+    children,
+    type,
+    onClick,
+    isFullWidth,
+    size,
+    color,
+    isDisabled,
+  } = props;
   return (
     <StyledButton
+      className={className}
       isFullWidth={isFullWidth}
       size={size}
       color={color}
       isDisabled={isDisabled}
       type={type}
-      onClick={type}
+      onClick={onClick}
     >
       {children}
     </StyledButton>
