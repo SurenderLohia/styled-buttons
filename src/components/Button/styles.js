@@ -10,6 +10,33 @@ const buttonSizes = {
   extraLarge: 2,
 };
 
+const buttonColors = {
+  primary: {
+    background: '#3e68ff',
+    text: '#fff',
+  },
+  info: {
+    background: '#3e8ed0',
+    text: '#fff',
+  },
+  success: {
+    background: '#48c78e',
+    text: '#fff',
+  },
+  warning: {
+    background: '#ffe08a',
+    color: 'rgba(0,0,0,.7)',
+  },
+  danger: {
+    background: '#3e8ed0',
+    text: '#fff',
+  },
+};
+
+const getButtonColor = (color) => {
+  return buttonColors[color] ? buttonColors[color] : buttonColors['primary'];
+};
+
 export const StyledButton = styled.button`
   border: none;
   background-color: transparent;
@@ -30,8 +57,6 @@ export const StyledButton = styled.button`
   justify-content: center;
 
   // Style
-  background-color: ${btnColor};
-  color: #fff;
   border-radius: 8px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
@@ -45,18 +70,25 @@ export const StyledButton = styled.button`
 
   transition: 220ms all ease-in-out;
 
-  &:hover,
-  &:active {
-    background-color: ${lighten(-0.2, btnColor)};
-  }
+  // color
+  ${({ color }) => {
+    const buttonColor = getButtonColor(color);
+    return css`
+      background-color: ${buttonColor.background};
+      color: ${buttonColor.text};
 
-  &:focus {
-    outline-style: solid;
-    outline-color: transparent;
-    box-shadow: 0 0 0 4px ${lighten(-0.4, btnColor)};
-  }
+      &:hover,
+      &:active {
+        background-color: ${lighten(-0.2, buttonColor.background)};
+      }
 
-  // Variations
+      &:focus {
+        outline-style: solid;
+        outline-color: transparent;
+        box-shadow: 0 0 0 4px ${lighten(-0.4, buttonColor.background)};
+      }
+    `;
+  }}
 
   // full width
   ${(props) =>

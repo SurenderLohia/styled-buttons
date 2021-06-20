@@ -11,35 +11,59 @@ const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Primary Button'
+  children: 'Primary'
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  children: 'Info',
+  color: 'info'
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  children: 'Success',
+  color: 'success'
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  children: 'Warning',
+  color: 'warning'
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  children: 'Danger',
+  color: 'danger'
 };
 
 export const FullWidth = Template.bind({});
 FullWidth.args = {
-  children: 'Full Width Button',
+  children: 'Full Width',
   isFullWidth: true
 };
 
 export const SmallButton = Template.bind({});
 SmallButton.args = {
-  children: 'Small Button',
+  children: 'Small',
   size: 'small'
 };
 
 export const MediumButton = Template.bind({});
 MediumButton.args = {
-  children: 'Medium Button',
+  children: 'Medium',
   size: 'medium'
 };
 
 export const LargeButton = Template.bind({});
 LargeButton.args = {
-  children: 'Large Button',
+  children: 'Large',
   size: 'large'
 };
 
 export const ExtraLargeButton = Template.bind({});
 ExtraLargeButton.args = {
-  children: 'Extra Large Button',
+  children: 'Extra Large',
   size: 'extraLarge'
 };
