@@ -7,23 +7,23 @@ export const buttonSizes = {
 
 export const buttonColors = {
   primary: {
-    background: '#3e68ff',
-    text: '#fff',
+    background: "#3e68ff",
+    text: "#fff",
   },
   info: {
-    background: '#3e8ed0',
-    text: '#fff',
+    background: "#3e8ed0",
+    text: "#fff",
   },
   success: {
-    background: '#48c78e',
-    text: '#fff',
+    background: "#48c78e",
+    text: "#fff",
   },
   warning: {
-    background: '#ffe08a',
-    color: 'rgba(0,0,0,.7)',
+    background: "#ffe08a",
+    color: "rgba(0,0,0,.7)",
   },
   danger: {
-    background: '#3e8ed0',
-    text: '#fff',
+    background: "#f14668",
+    text: "#fff",
   },
 };
