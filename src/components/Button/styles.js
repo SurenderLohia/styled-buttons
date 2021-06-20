@@ -1,37 +1,7 @@
 import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 
-const btnColor = '#3e68ff';
-
-const buttonSizes = {
-  small: 0.8,
-  medium: 1,
-  large: 1.5,
-  extraLarge: 2,
-};
-
-const buttonColors = {
-  primary: {
-    background: '#3e68ff',
-    text: '#fff',
-  },
-  info: {
-    background: '#3e8ed0',
-    text: '#fff',
-  },
-  success: {
-    background: '#48c78e',
-    text: '#fff',
-  },
-  warning: {
-    background: '#ffe08a',
-    color: 'rgba(0,0,0,.7)',
-  },
-  danger: {
-    background: '#3e8ed0',
-    text: '#fff',
-  },
-};
+import { buttonSizes, buttonColors } from './constants';
 
 const getButtonColor = (color) => {
   return buttonColors[color] ? buttonColors[color] : buttonColors['primary'];
@@ -45,7 +15,6 @@ export const StyledButton = styled.button`
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica,
     Arial, sans-serif;
 
-  padding: 0;
   cursor: pointer;
 
   @media screen and (-ms-high-contrast: active) {
@@ -110,5 +79,5 @@ export const StyledButton = styled.button`
  * Button styles used from below resource
  * https://moderncss.dev/css-button-styling-guide/
  *
- * font-family: Used bulma.io font family style
+ * Button colors & font-family: Used from bulma.io
  */
