@@ -86,6 +86,11 @@ export const StyledButton = styled.button`
       : `${buttonSizes["medium"]}rem`}
 `;
 
+export const StyledButtonIcon = styled.span`
+  display: inline-block;
+  margin-right: 8px;
+`;
+
 /**
  * Thanks to below creators:
  *
