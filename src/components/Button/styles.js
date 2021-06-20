@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { lighten } from 'polished';
 
 const btnColor = '#3e68ff';
 
 export const StyledButton = styled.button`
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   border: none;
   background-color: transparent;
@@ -24,12 +24,14 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
 
+  // Style
   background-color: ${btnColor};
   color: #fff;
   border-radius: 8px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
 
-  padding: 0.25em 0.75em;
+  // Size
+  padding: 0.5em 1em;
   min-width: 10ch;
   min-height: 44px;
 
@@ -48,6 +50,13 @@ export const StyledButton = styled.button`
     outline-color: transparent;
     box-shadow: 0 0 0 4px ${lighten(-0.4, btnColor)};
   }
+
+  // Variations
+  ${(props) =>
+    props.isFullWidth &&
+    css`
+      width: 100%;
+    `}
 `;
 
 /**

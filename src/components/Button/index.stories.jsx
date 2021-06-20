@@ -13,3 +13,9 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Primary Button'
 };
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  children: 'Full Width Button',
+  isFullWidth: true
+};
