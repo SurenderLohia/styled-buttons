@@ -30,6 +30,7 @@ function Button(props) {
 }
 
 Button.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
   type: PropTypes.string,
   onClick: PropTypes.func,
